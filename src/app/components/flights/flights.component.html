@@ -1,0 +1,48 @@
+<div class="main-wrapper container">
+  <!-- Workers wrapper: STARTS here -->
+  <div class="workers-wrapper h-100">
+    <div class="title p-2">Workers:</div>
+    <ul class="workers m-0 p-0">
+      <li
+        *ngFor="let data of this.workers"
+        class="{{ data.id === this.selectedId ? 'active' : ''}} p-2"
+        (click)="getFlights(data.id)"
+      >
+        {{data.name}}
+      </li>
+    </ul>
+  </div>
+  <!-- Workers wrapper: ENDS here -->
+
+  <!-- Flights wrapper: STARTS here -->
+  <div class="flights-wrapper h-100">
+    <div class="title d-flex">
+      <span>Flight Number</span>
+      <span>Origin</span>
+      <span>Origin Date</span>
+      <span>Destination</span>
+      <span>Destination Date</span>
+    </div>
+    <div
+      *ngFor="let item of this.flightsData"
+      class="flights d-flex {{ item.num === this.selectedDetails ? 'active' : '' }}"
+      (click)="this.flightsDetails(item)"
+    >
+      <span>{{item.num}}</span>
+      <span>{{item.from}}</span>
+      <span>{{item.from_date}}</span>
+      <span>{{item.to}}</span>
+      <span>{{item.to_date}}</span>
+    </div>
+  </div>
+  <!-- Flights wrapper: ENDS here -->
+
+  <!-- Flights details wrapper: STARTS here -->
+  <div *ngIf="this.showDetails" class="flight-details-wrapper mt-5 px-3">
+    <div class="fligt-details">Plane number: <strong>{{this.planeNumber}}</strong></div>
+    <div class="fligt-details">Duration: <strong>{{this.duration | timeFormat }}</strong></div>
+    <div class="fligt-details">Origin gate: <strong>{{this.originGate}}</strong></div>
+    <div class="fligt-details">Destionation gate: <strong>{{this.destinationGate}}</strong></div>
+  </div>
+  <!-- Flights details wrapper: ENDS here -->
+</div>
