@@ -25,7 +25,7 @@ export class CommonService {
    * It gets employee data.
    *
    * @author Nenad Stojković <nenstojkovic@gmail.com>
-   * @return `EmployeeResponseModel` Array of objects.
+   * @return `WorkersResponseModel` Array of objects.
    */
   getWorkers(): Observable<WorkersResponseModel> {
     const data: any = 'https://interview-mock.herokuapp.com/api/workers/';
@@ -33,10 +33,10 @@ export class CommonService {
   }
 
   /**
-   * It gets employee data.
+   * It gets flights data.
    *
    * @author Nenad Stojković <nenstojkovic@gmail.com>
-   * @return `ShiftsResponseModel` Array of objects.
+   * @return `FlightsResponseModel` Array of objects.
    */
   getFlights(id: number): Observable<FlightsResponseModel> {
     const data = `https://interview-mock.herokuapp.com/api/workers/${id}`;
