@@ -14,7 +14,7 @@ export class TimeFormatPipe implements PipeTransform {
   /**
    * Its format number to time.
    *
- * @author Nenad Stojković <nenstojkovic@gmail.com>
+   * @author Nenad Stojković <nenstojkovic@gmail.com>
    * @return `number`.
    */
   transform(number: number) {
